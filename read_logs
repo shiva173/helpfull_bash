@@ -1,0 +1,16 @@
+#!bin/bash
+
+#find to many nested folders and files
+
+find . -mindepth 2 | awk -F/'{print $2"/"}' | sort | uniq -c | sort -n | tail -10
+
+# number of adress and they number of requests
+cat access.log.1 | awk '{print $1}' | sort |uniq -c | sort -n | tail
+
+#number of adress and they number of requests 404 code
+
+cat access.log.1 | awk '{print $1, $8}' | sort |uniq -c | sort -n | tail | grep 404
+
+#number of adress and they date and time 
+
+cat access.log.1 | awk '{print $3}' | sort |uniq -c | sort -n | tail
