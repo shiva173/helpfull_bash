@@ -1,0 +1,5 @@
+#!/bin/bash
+y=$(tty)
+x=$(apt-get autoclean && apt-get dist-upgrade)
+echo -e "start update": "\n" $x 0>$y
+

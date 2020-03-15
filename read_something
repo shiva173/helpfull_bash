@@ -1,0 +1,26 @@
+#!/bin/bash
+data=$(date)
+echo -n "Enter your name: "
+read name
+echo -en "HELLO $name, welcome in my program, \n today: $data"
+
+echo -en " \n What you want do choose number: \n 1)i can say about your work dir \n 2) sysinfo \n 3)open firefox \n :"
+read command
+
+if [[ $command == 1 ]]
+then
+dir=$(pwd)
+echo "Your working directory: $dir"
+elif [[ $command == 2 ]]
+then
+sysinfo=$(uptime)
+echo "information about system: $sysinfo"
+elif [[ $command == 3 ]]
+then
+echo -n "What you want find in firefox: "
+read something
+echo "Open firefox"
+firefox $something 2>/dev/null
+else
+echo "Something went wrong"
+fi

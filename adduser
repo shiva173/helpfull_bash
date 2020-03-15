@@ -1,0 +1,15 @@
+#!/bin/bash
+
+user=egor
+
+if grep $user /etc/passwd
+
+then
+
+echo "$user in the system"
+
+elif "the $user "
+
+echo "who is this ?"
+
+fi

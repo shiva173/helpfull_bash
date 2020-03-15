@@ -1,0 +1,6 @@
+#!/bin/bash
+# Our comment is here 
+direction=/root/bin
+filename=$1
+file=$(touch $direction/$filename && chmod u+x $direction/$filename && echo "#!/bin/bash" > $direction/$filename)
+echo  "i create script with name: $filename"

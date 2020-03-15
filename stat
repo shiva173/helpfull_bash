@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#x=`date`
+#y=`uptime`
+
+#echo $x >/dev/pts/2
+#echo $y >/dev/pts/2
+
+a=$(whoami)
+b=$(free -mh)
+x=$(date)
+y=$(uptime)
+z=$(df -h)
+echo -e "current user: \n $a \n \n current date: \n $x \n \n current system status:\n $y \n \n disk space and ram: \n $z \n \n $b"
