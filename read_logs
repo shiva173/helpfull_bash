@@ -1,6 +1,7 @@
 #!bin/bash
 
-
+#find all file if they have string
+find ./ -type f -exec grep -H 'solver' {} \;
 
 #find to many nested folders and files
 
