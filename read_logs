@@ -19,3 +19,9 @@ cat access.log.1 | awk '{print $1, $8}' | sort |uniq -c | sort -n | tail | grep 
 #number of adress and they date and time 
 
 cat access.log.1 | awk '{print $3}' | sort |uniq -c | sort -n | tail
+
+# find files have data
+grep -lir 'ssl' /etc/nginx/
+
+# find files crt
+find / -iname '*.crt'
