@@ -25,3 +25,7 @@ grep -lir 'ssl' /etc/nginx/
 
 # find files crt
 find / -iname '*.crt'
+
+
+# information about system 
+cat /etc/*-release 
