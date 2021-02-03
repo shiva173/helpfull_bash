@@ -29,3 +29,17 @@ find / -iname '*.crt'
 
 # information about system 
 cat /etc/*-release 
+
+
+
+# use binaries for commands
+
+### Binaries ###
+TAR="$(which tar)"
+GZIP="$(which gzip)"
+FTP="$(which ftp)"
+MYSQL="$(which mysql)"
+MYSQLDUMP="$(which mysqldump)"
+#and example for use 
+
+$MYSQLDUMP --add-drop-table -u $MUSER -h $MHOST -p$MPASS $db | $GZIP > $FILE;
