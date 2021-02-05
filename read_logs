@@ -43,3 +43,14 @@ MYSQLDUMP="$(which mysqldump)"
 #and example for use 
 
 $MYSQLDUMP --add-drop-table -u $MUSER -h $MHOST -p$MPASS $db | $GZIP > $FILE;
+
+
+#speed write 
+sync; dd if=/dev/zero of=tempfile bs=1M count=1024; sync
+#speed read buffer
+dd if=tempfile of=/dev/null bs=1M count=1024
+#speed read without buffer
+sudo /sbin/sysctl -w vm.drop_caches=3
+dd if=tempfile of=/dev/null bs=1M count=1024
+
+
