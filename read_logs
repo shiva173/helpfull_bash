@@ -32,6 +32,10 @@ cat /etc/*-release
 
 
 
+# find something in logs 
+ls -lt / | awk '{print $1}'| sort -u | grep -v итого
+
+
 # use binaries for commands
 
 ### Binaries ###
@@ -52,5 +56,33 @@ dd if=tempfile of=/dev/null bs=1M count=1024
 #speed read without buffer
 sudo /sbin/sysctl -w vm.drop_caches=3
 dd if=tempfile of=/dev/null bs=1M count=1024
+
+
+
+#!/bin/bash
+
+BACKUP_DIR="/tmp/backups"
+BACKUP_FILE="$(date +%F-%H-%M-%S).tar.gz"
+
+if [ ! -d $BACKUP_DIR ]; then
+    mkdir -p "$BACKUP_DIR"
+fi
+
+
+tar -czf "$BACKUP_DIR/$BACKUP_FILE" /etc 2>/dev/null
+
+
+
+
+
+#!/bin/bash
+
+for pf in ./task2/{2010..2020}/{01..12}/{001..005}; do
+  mkdir -p "$(dirname $pf)" && echo "Файл $(echo $pf | cut -d '/' -f 5)" > "$pf$
+done
+
+
+
+
 
 
