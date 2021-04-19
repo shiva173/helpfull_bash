@@ -84,5 +84,6 @@ done
 
 
 
-
+#find something big 
+ps -e -o pid,user,%mem,command --sort %mem
 
