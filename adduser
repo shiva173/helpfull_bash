@@ -13,3 +13,6 @@ elif "the $user "
 echo "who is this ?"
 
 fi
+
+
+# useradd -m -G developer another_group -s /bin/bash ivanov
