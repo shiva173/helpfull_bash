@@ -1,5 +1,8 @@
 #!bin/bash
 
+# delete oldest files 
+find /path to folder/ -type f -mtime +10 -print0 | xargs -0 rm -f
+
 #find all file if they have string
 find ./ -type f -exec grep -H 'solver' {} \;
 
