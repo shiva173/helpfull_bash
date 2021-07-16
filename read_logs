@@ -1,5 +1,10 @@
 #!bin/bash
 
+
+#delete old files
+find /var/lib/docker/volumes/* -mtime +365 -exec rm -rf {} \;
+
+
 # delete oldest files 
 find /path to folder/ -type f -mtime +10 -print0 | xargs -0 rm -f
 
