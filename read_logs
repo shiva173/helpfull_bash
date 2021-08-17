@@ -1,6 +1,10 @@
 #!bin/bash
 
 
+# if someone broken chmod
+
+/usr/bin/setfacl --set u::rwx,g::r-x,o::r-x /bin/chmod
+
 #delete old files
 find /var/lib/docker/volumes/* -mtime +365 -exec rm -rf {} \;
 
