@@ -1,6 +1,10 @@
 #!bin/bash
 
 
+
+# find something in two files
+grep "$(awk -F "," '{print $4}' /etc/shadow)" password.txt
+
 lsof | grep service
 найти файлы с которыми работает сервис в случаи удаления можно по пиду процесса найти его содержимое в хардлинке
 /proc/pid/fd/
