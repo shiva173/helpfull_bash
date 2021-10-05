@@ -1,6 +1,7 @@
 #!bin/bash
 
-
+# append string after string
+fgrep -r pattern | sed -i '/pattern/a append' dir/*
 
 # find something in two files
 grep "$(awk -F "," '{print $4}' /etc/shadow)" password.txt
