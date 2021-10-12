@@ -1,5 +1,9 @@
 #!bin/bash
 
+#find something not identic in files
+grep -v -w -Ff what.txt where.txt
+
+
 # append string after string
 fgrep -r pattern | sed -i '/pattern/a append' dir/*
 
